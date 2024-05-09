@@ -1,0 +1,3 @@
+[submodule "Tests"]
+	path = Tests
+	url = https://github.com/Plymouth-University/2022-comp1000-cw-t.git

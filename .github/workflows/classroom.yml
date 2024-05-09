@@ -1,0 +1,20 @@
+    name: GitHub Classroom Workflow
+
+    on: [push]
+
+    jobs:
+      build:
+        name: Autograding
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+            with:
+                submodules: 'true'
+            name: Dotnet Side by Side testing sample
+          - name: Setup dotnet
+            uses: actions/setup-dotnet@v1
+            with:
+                dotnet-version: '3.1.x'
+          - run: dotnet build
+          - run: dotnet test 
+          - uses: education/autograding@v1
